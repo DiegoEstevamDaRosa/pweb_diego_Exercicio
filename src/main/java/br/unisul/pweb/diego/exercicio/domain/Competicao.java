@@ -32,12 +32,11 @@ public class Competicao implements Serializable{
 	public Competicao() {
 		
 	}
-	public Competicao(Integer id, String nome, String data, List<Atleta> atletas) {
+	public Competicao(Integer id, String nome, String data) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.data = data;
-		this.atletas = atletas;
 	}
 	public Integer getId() {
 		return id;

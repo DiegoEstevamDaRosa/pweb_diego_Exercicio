@@ -23,7 +23,7 @@ public class DevConfig {
 		if (!strategy.equals("create")) {
 			return false;
 		}
-		dbService.inicializaBancoDeDados() ;
+		dbService.inicializaBancoDeDados();
 		return true;
 	}
 

@@ -38,7 +38,6 @@ public class Atleta implements Serializable {
 	@CollectionTable(name="MODALIDADES")
 	private Set<String> modalidades = new HashSet<>();
 
-	
 	public Atleta() {
 		
 	}
