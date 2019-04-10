@@ -16,12 +16,11 @@ public class Competicao implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
-	private String nome;
 	private String data;
+	private String descricao;
 	
 	@ManyToMany(mappedBy="competicoes")
 	private List<Atleta> atletas = new ArrayList<>();
-	
 	
 	public String getData() {
 		return data;
@@ -32,10 +31,10 @@ public class Competicao implements Serializable{
 	public Competicao() {
 		
 	}
-	public Competicao(Integer id, String nome, String data) {
+	public Competicao(Integer id, String descricao, String data) {
 		super();
 		this.id = id;
-		this.nome = nome;
+		this.descricao = descricao;
 		this.data = data;
 	}
 	public Integer getId() {
@@ -44,11 +43,11 @@ public class Competicao implements Serializable{
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getNome() {
-		return nome;
+	public String getDescricao() {
+		return descricao;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 	public List<Atleta> getAtletas() {
 		return atletas;

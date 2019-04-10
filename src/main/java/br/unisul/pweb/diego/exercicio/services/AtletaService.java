@@ -16,8 +16,8 @@ public class AtletaService {
     private AtletaRepository atletaRepository;
 
     public Atleta findById(Integer id) {
-        Optional<Atleta> athlete = atletaRepository.findById(id);
-        return athlete.orElse(null);
+        Optional<Atleta> atleta = atletaRepository.findById(id);
+        return atleta.orElse(null);
     }
     public List<Atleta> findAll(){
         return atletaRepository.findAll();

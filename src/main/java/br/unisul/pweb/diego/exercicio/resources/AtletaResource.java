@@ -25,14 +25,12 @@ public class AtletaResource {
         Atleta atleta = atletaService.findById(id);
         return ResponseEntity.ok().body(atleta);
     }
-
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<AtletaDTO>> findAll() {
         List<Atleta> competicoes = atletaService.findAll();
         List<AtletaDTO> competicaoDTO = competicoes.stream().map(atleta -> new AtletaDTO(atleta)).collect(Collectors.toList());
         return ResponseEntity.ok().body(competicaoDTO);
     }
-
     @RequestMapping(method=RequestMethod.POST)
     public ResponseEntity<Void>insert(@RequestBody Atleta atleta){
         atleta = atletaService.insert(atleta);
@@ -40,19 +38,16 @@ public class AtletaResource {
                 path("/{id}").buildAndExpand(atleta.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
-
     @RequestMapping(value="/{id}", method=RequestMethod.PUT)
     public ResponseEntity<Void> update(@RequestBody Atleta atleta, @PathVariable Integer id){
         atleta.setId(id);
         atleta = atletaService.update(atleta);
         return ResponseEntity.noContent().build();
     }
-
     @RequestMapping(value="/{id}", method=RequestMethod.DELETE)
     public ResponseEntity<Void> delete(@PathVariable Integer id) {
         atletaService.deleteById(id);
         return ResponseEntity.noContent().build();
     }
-
 
 }
